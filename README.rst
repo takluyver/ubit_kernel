@@ -25,12 +25,12 @@ Set-up steps:
    and follow the instructions there to flash it onto the micro:bit. It doesn't
    matter for this what the script does.
 2. `Install Jupyter <http://jupyter.readthedocs.org/en/latest/install.html>`__.
-3. Install this package:
+3. Install this package::
 
        pip install ubit_kernel
        python3 -m ubit_kernel.install
 
-When you start the Jupyter Notebook, there should be a micro:bit option in the
+When you start the Jupyter Notebook, there should be a *micro:bit* option in the
 menu to create a new notebook.
 
 To use the kernel from other Jupyter interfaces, start them with ``--kernel ubit``.
