@@ -18,4 +18,7 @@ def connect():
     """
     Returns a pySerial Serial object to talk to the microbit
     """
-    return Serial(find_microbit(), BAUDRATE, parity=PARITY)
+    s = Serial(find_microbit(), BAUDRATE, parity=PARITY)
+    s.write(b'\x01') # Ctrl-A, switch to raw REPL
+    s.read_until(b'\r\n>') # Wait for prompt
+    return s
