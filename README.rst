@@ -24,6 +24,15 @@ Set-up steps:
    `create a Python script in the web editor <https://www.microbit.co.uk/app/#create:xyelfe>`__,
    and follow the instructions there to flash it onto the micro:bit. It doesn't
    matter for this what the script does.
+
+2. Depending on your system, you may need some extra setup so that the kernel
+   can talk to your micro:bit using a serial port.
+
+   * On Linux, you may need to add yourself to the *dialout* group.
+     Run ``sudo usermod -a -G dialout <your-username>``, then log out and in again.
+   * On Windows, you need to `install the mbed driver
+     <https://developer.mbed.org/handbook/Windows-serial-configuration>`__.
+
 2. `Install Jupyter <http://jupyter.readthedocs.org/en/latest/install.html>`__.
 3. Install this package::
 
