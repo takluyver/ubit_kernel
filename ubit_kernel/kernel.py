@@ -6,7 +6,7 @@ import time
 from ipykernel.kernelbase import Kernel
 from .ubit import connect
 
-__version__ = '0.2'
+__version__ = '0.3'
 
 class MicrobitKernel(Kernel):
     implementation = 'ubit_kernel'
