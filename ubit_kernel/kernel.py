@@ -1,5 +1,6 @@
 import ast
 import re
+import sys
 import time
 
 from ipykernel.kernelbase import Kernel
@@ -39,8 +40,7 @@ class MicrobitKernel(Kernel):
         while not result.endswith(b'\x04>'):
             time.sleep(0.1)
             result.extend(self.serial.read_all())
-        import sys
-        print('Read', repr(result), file=sys.__stderr__)
+        #print('Read', repr(result), file=sys.__stderr__)
 
         assert result.startswith(b'OK')
         out, err = result[2:-2].split(b'\x04', 1)
@@ -68,19 +68,18 @@ class MicrobitKernel(Kernel):
         return ast.literal_eval(out)
 
     def do_complete(self, code, cursor_pos):
-        import sys
-        print('completing on', repr(code), file=sys.__stderr__)
+        #print('completing on', repr(code), file=sys.__stderr__)
         code = code[:cursor_pos]
         m = re.search(r'(\w+\.)*(\w+)?$', code)
         if m:
             prefix = m.group()
-            print('prefix', repr(prefix), file=sys.__stderr__)
+            #print('prefix', repr(prefix), file=sys.__stderr__)
             if '.' in prefix:
                 obj, prefix = prefix.rsplit('.')
                 names = self._eval('dir({})'.format(obj))
             else:
                 names = self._eval('dir()')
-            print('names', names, file=sys.__stderr__)
+            #print('names', names, file=sys.__stderr__)
             matches = [n for n in names if n.startswith(prefix)]
             return {'matches': matches,
                     'cursor_start': cursor_pos - len(prefix), 'cursor_end': cursor_pos,
