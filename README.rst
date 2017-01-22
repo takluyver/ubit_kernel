@@ -33,8 +33,8 @@ Set-up steps:
    * On Windows, you need to `install the mbed driver
      <https://developer.mbed.org/handbook/Windows-serial-configuration>`__.
 
-2. `Install Jupyter <http://jupyter.readthedocs.org/en/latest/install.html>`__.
-3. Install this package::
+3. `Install Jupyter <http://jupyter.readthedocs.org/en/latest/install.html>`__.
+4. Install this package::
 
        pip install ubit_kernel
        python3 -m ubit_kernel.install
