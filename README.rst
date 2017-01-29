@@ -34,6 +34,7 @@ Set-up steps:
      <https://developer.mbed.org/handbook/Windows-serial-configuration>`__.
 
 3. `Install Jupyter <http://jupyter.readthedocs.org/en/latest/install.html>`__.
+
 4. Install this package::
 
        pip install ubit_kernel
@@ -44,4 +45,4 @@ menu to create a new notebook.
 
 To use the kernel from other Jupyter interfaces, start them with ``--kernel ubit``.
 
-Note that there is a derived project supporting to use MicroPython on the `NodeMcu <https://docs.micropython.org/en/latest/esp8266/index.html>`__ from a jupyter environment, which you can find `here <https://github.com/jneines/nodemcu_kernel>`__.
+Note that there is a derived project supporting to use MicroPython on the `NodeMcu <https://docs.micropython.org/en/latest/esp8266/index.html>`__ from a Jupyter environment, which you can find `here <https://github.com/jneines/nodemcu_kernel>`__.
